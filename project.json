@@ -1,0 +1,24 @@
+{
+  "overview": "A full-featured event finder web app with dark glassmorphic design, real-time search, category filters, 20+ mock events, event detail modals, auth UI, security features, trending section, and fully responsive layouts.",
+  "features": [
+    "Real-time search and category filters across 10 categories",
+    "Event cards with LIVE/FREE badges, organizer info, and heart toggle",
+    "Event detail modal with full info, speakers, and share/calendar/report",
+    "Auth modal with login/register and password strength meter",
+    "Security UX: input sanitization, rate limiting, cookie consent, secure checkout",
+    "Trending section, Featured Organizers, Stats bar, Newsletter, You Might Like",
+    "Dark glassmorphic design with neon hover glows and animated counters",
+    "Fully responsive: mobile hamburger/bottom-sheet, tablet 2-col, desktop 3-col"
+  ],
+  "category": "productivity",
+  "tags": [
+    "events",
+    "dark-mode",
+    "glassmorphism",
+    "search",
+    "filters",
+    "react",
+    "tailwind"
+  ],
+  "last_updated": "2026-04-20T16:18:17.366Z"
+}

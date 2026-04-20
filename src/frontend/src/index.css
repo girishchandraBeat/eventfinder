@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "General Sans", sans-serif;
+    --font-body: "Inter", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+    --radius: 0.625rem;
+
+    --background: 0.99 0 0;
+    --foreground: 0.15 0 0;
+    --card: 1.0 0 0;
+    --card-foreground: 0.15 0 0;
+    --popover: 1.0 0 0;
+    --popover-foreground: 0.15 0 0;
+
+    --primary: 0.35 0 0;
+    --primary-foreground: 0.98 0 0;
+
+    --secondary: 0.95 0 0;
+    --secondary-foreground: 0.25 0 0;
+    --muted: 0.95 0 0;
+    --muted-foreground: 0.5 0 0;
+
+    --accent: 0.35 0 0;
+    --accent-foreground: 0.98 0 0;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.9 0 0;
+    --input: 0.9 0 0;
+    --ring: 0.35 0 0;
+
+    --chart-1: 0.65 0.22 40;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.83 0.19 84;
+    --chart-5: 0.77 0.19 70;
+
+    --sidebar: 0.98 0 0;
+    --sidebar-foreground: 0.15 0 0;
+    --sidebar-primary: 0.35 0 0;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.95 0 0;
+    --sidebar-accent-foreground: 0.25 0 0;
+    --sidebar-border: 0.9 0 0;
+    --sidebar-ring: 0.35 0 0;
+  }
+
+  .dark {
+    --background: 0.08 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.12 0.01 290;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.15 0.01 280;
+    --popover-foreground: 0.95 0 0;
+
+    --primary: 0.7 0.24 270;
+    --primary-foreground: 0.08 0 0;
+
+    --secondary: 0.18 0.02 280;
+    --secondary-foreground: 0.85 0 0;
+    --muted: 0.18 0.02 280;
+    --muted-foreground: 0.55 0 0;
+
+    --accent: 0.72 0.25 262;
+    --accent-foreground: 0.08 0 0;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.08 0 0;
+
+    --border: 0.2 0.01 270;
+    --input: 0.2 0.01 270;
+    --ring: 0.72 0.25 262;
+
+    --chart-1: 0.7 0.24 270;
+    --chart-2: 0.65 0.24 40;
+    --chart-3: 0.72 0.25 262;
+    --chart-4: 0.6 0.24 20;
+    --chart-5: 0.75 0.24 300;
+
+    --sidebar: 0.12 0.01 290;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.7 0.24 270;
+    --sidebar-primary-foreground: 0.08 0 0;
+    --sidebar-accent: 0.18 0.02 280;
+    --sidebar-accent-foreground: 0.85 0 0;
+    --sidebar-border: 0.2 0.01 270;
+    --sidebar-ring: 0.72 0.25 262;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+}
+
+@keyframes hero-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up-card {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      #0a0a1a 0%,
+      rgba(124, 58, 237, 0.25) 30%,
+      rgba(37, 99, 235, 0.2) 60%,
+      rgba(6, 182, 212, 0.15) 100%
+    );
+    background-size: 300% 300%;
+    animation: hero-shift 8s ease infinite;
+  }
+
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 25%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.05) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .glass {
+    @apply rounded-xl border border-white/20 bg-white/10 backdrop-blur-xl;
+  }
+
+  .glow-primary {
+    @apply shadow-lg shadow-purple-500/20;
+  }
+
+  .glow-accent {
+    @apply shadow-lg shadow-cyan-500/20;
+  }
+
+  .hover-glow {
+    @apply transition-smooth hover:shadow-xl hover:shadow-purple-500/30;
+  }
+
+  .gradient-hero {
+    @apply bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-500;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+
+  .badge-base {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold transition-smooth;
+  }
+
+  .category-music {
+    @apply bg-purple-500/20 text-purple-300 border border-purple-400/30;
+  }
+
+  .category-tech {
+    @apply bg-blue-500/20 text-blue-300 border border-blue-400/30;
+  }
+
+  .category-food {
+    @apply bg-orange-500/20 text-orange-300 border border-orange-400/30;
+  }
+
+  .category-art {
+    @apply bg-pink-500/20 text-pink-300 border border-pink-400/30;
+  }
+
+  .category-sports {
+    @apply bg-green-500/20 text-green-300 border border-green-400/30;
+  }
+
+  .category-comedy {
+    @apply bg-yellow-500/20 text-yellow-300 border border-yellow-400/30;
+  }
+
+  .category-wellness {
+    @apply bg-teal-500/20 text-teal-300 border border-teal-400/30;
+  }
+
+  .category-gaming {
+    @apply bg-red-500/20 text-red-300 border border-red-400/30;
+  }
+
+  .category-business {
+    @apply bg-indigo-500/20 text-indigo-300 border border-indigo-400/30;
+  }
+
+  .fade-in {
+    animation: fade-in 0.5s ease-out both;
+  }
+
+  .slide-up {
+    animation: slide-up-card 0.5s ease-out both;
+  }
+}
