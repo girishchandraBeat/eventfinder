@@ -1,7 +1,5 @@
 # Event Finder
-Exported from Caffeine project: EventFinder
 
-https://creative-lime-zxf-draft.caffeine.xyz/
 A modern React application to discover and find events near you. Search through a variety of events across different categories including music, technology, food & drink, art, and sports.
 
 Features
